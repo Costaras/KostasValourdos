@@ -224,7 +224,8 @@
 								<div class="contact-method">
 									<span class="icon solid alt fa-envelope"></span>
 									<h3>Email</h3>
-									<a href="#">kostas.valourdosda@gmail.com</a>
+									<a href="#" id="email-link" onclick="copyToClipboard(event)">kostas.valourdosda@gmail.com</a>
+									<span id="copy-message" style="display: none; color: limegreen; margin-left: 10px;">Copied!</span>
 								</div>
 							</section>
 							<section>
@@ -262,6 +263,29 @@
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
-
+		<!-- Copy to Clipboard Script -->
+		<script>
+			function copyToClipboard(event) {
+				event.preventDefault(); // Prevents the link from navigating to the top of the page
+				const email = "kostas.valourdosda@gmail.com";
+				navigator.clipboard.writeText(email).then(() => {
+					// Show the copied message
+					const message = document.getElementById('copy-message');
+					message.style.display = 'inline';
+					
+					// Optionally change the link text color or style temporarily
+					const emailLink = document.getElementById('email-link');
+					emailLink.style.color = 'limegreen';
+					
+					// Hide the message after a short delay
+					setTimeout(() => {
+						message.style.display = 'none';
+						emailLink.style.color = ''; // Reset to original color
+					}, 2000); // 2 seconds delay
+				}).catch(err => {
+					console.error('Failed to copy email: ', err);
+				});
+			}
+		</script>
 </body>
 </html>
