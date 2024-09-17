@@ -1,3 +1,9 @@
+This portfolio website was created by me using an HTML5 UP template.
+
+
+
+Here is some information about HTML5 UP:
+
 Forty by HTML5 UP
 html5up.net | @ajlkn
 Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
